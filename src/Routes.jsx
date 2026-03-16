@@ -11,6 +11,8 @@ import LearnRef from "./components/LearnRef";
 import Memoization from "./components/Memoization";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./config/ProtectedRoute";
+import UserDashboard from "./pages/UserDashboard";
+import UserProfileEdit from "./pages/UserProfileEdit";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,11 @@ const router = createBrowserRouter([
             <Dashboard />
           </ProtectedRoute>
         ),
+      },
+      {
+        path: "user",
+        element: <UserDashboard />,
+        children: [{ path: "edit", element: <UserProfileEdit /> }],
       },
       {
         path: "*",

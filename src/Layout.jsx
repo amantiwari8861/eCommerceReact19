@@ -5,12 +5,13 @@ import { ToastContainer } from "react-toastify";
 
 const Layout = () => {
   const location = useLocation();
+  const noFooterComp = ["/login", "/user/edit"];
   return (
     <>
       <ToastContainer />
       <Navbar />
       <Outlet />
-      {location.pathname !== "/login" && <Footer />}
+      {noFooterComp.includes(location.pathname) ? null : <Footer />}
     </>
   );
 };

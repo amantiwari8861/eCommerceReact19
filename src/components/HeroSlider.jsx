@@ -9,6 +9,37 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
+const SliderObject = [
+  {
+    path: "assets/img/slide (1).jpg",
+    alt: "",
+  },
+  {
+    path: "assets/img/slide (2).jpg",
+    alt: "",
+  },
+  {
+    path: "assets/img/slide (3).jpg",
+    alt: "",
+  },
+  {
+    path: "assets/img/slide (4).jpg",
+    alt: "",
+  },
+  {
+    path: "assets/img/slide (5).jpg",
+    alt: "",
+  },
+  {
+    path: "assets/img/slide (6).jpg",
+    alt: "",
+  },
+  {
+    path: "assets/img/slide (7).jpg",
+    alt: "",
+  },
+];
+
 export default function HeroSlider() {
   return (
     <>
@@ -24,16 +55,26 @@ export default function HeroSlider() {
           disableOnInteraction: false,
         }}
         navigation={true}
-        modules={[Pagination, Navigation,Autoplay]}
+        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
-        <SwiperSlide><img src="assets/img/slide (1).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide>
+        {SliderObject.map((slide, i) => (
+          <SwiperSlide key={i}>
+            <img
+              src={slide.path}
+              alt={slide.alt}
+              className="h-75 min-w-full"
+              loading="lazy"
+            />
+          </SwiperSlide>
+        ))}
+        {/* <SwiperSlide><img src="assets/img/slide (1).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide>
         <SwiperSlide><img src="assets/img/slide (2).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide>
         <SwiperSlide><img src="assets/img/slide (3).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide>
         <SwiperSlide><img src="assets/img/slide (4).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide>
         <SwiperSlide><img src="assets/img/slide (5).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide>
         <SwiperSlide><img src="assets/img/slide (6).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide>
-        <SwiperSlide><img src="assets/img/slide (7).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide>
+        <SwiperSlide><img src="assets/img/slide (7).jpg" alt="" className="h-75 min-w-full" loading="lazy"/></SwiperSlide> */}
       </Swiper>
     </>
   );
