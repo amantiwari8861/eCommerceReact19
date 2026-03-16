@@ -12,9 +12,9 @@
 - install create-react-app globally using ``npm i -g create-react-app``
 - i means install
 - -g means globally
-- check create-react-app version :``create-react-app -V ``
+- check create-react-app version :``create-react-app -V``
 - if there is asn error like running script disabled then type this command in terminal ``Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned``
-- to create a new React Project :  `` create-react-app helloreact``
+- to create a new React Project :  ``create-react-app helloreact``
 - change folder to helloreact :  ``cd helloreact``
 - open project folder in VS code :``code .``
 - Start the project :``npm start``

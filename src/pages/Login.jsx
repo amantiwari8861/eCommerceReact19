@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import useAuth from "../hook/useAuth";
+import { useNavigate } from "react-router";
 
 const initState = {
   email: "",
@@ -8,6 +9,7 @@ const initState = {
 };
 const Login = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState(initState);
 
@@ -26,7 +28,8 @@ const Login = () => {
     login(formData);
     console.log("form Submitted :", formData);
     setFormData(initState);
-    toast.success("form submitted!");
+    // toast.success("form submitted!");
+    navigate("/dashboard");
   };
 
   return (

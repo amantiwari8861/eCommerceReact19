@@ -9,6 +9,8 @@ import Wrapping from "./components/Wrapping";
 import Cart from "./pages/Cart";
 import LearnRef from "./components/LearnRef";
 import Memoization from "./components/Memoization";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./config/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "dashboard",
+        element: (
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "*",
